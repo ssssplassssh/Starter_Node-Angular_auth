@@ -1,1 +1,24 @@
-<p>login works!</p>
+<app-nav></app-nav>
+<div class="card text-white bg-primary mb-3">
+	<div class="card-header">Login</div>
+	<div class="card-body">
+
+		<form [formGroup]="profileForm" (ngSubmit)="Send_for_authorization()">
+
+			<div class="form-group">
+				<label for="InputEmail" class="form-label mt-2">Email address</label>
+				<input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" placeholder="Enter email" formControlName="email">
+				<small id="emailHelp" class="form-text">We'll never share your email with anyone else.</small>
+			  </div>
+
+			<div class="form-group">
+				<label for="InputPassword1" class="form-label">Enter Password</label>
+				<input type="password" class="form-control" id="InputPassword1" placeholder="Password" formControlName="password">
+			</div>
+
+			<p class="p1"><small>Complete the form to enable button</small></p>
+			<button type="submit" [disabled]="!profileForm.valid">Submit</button>
+			{{ profileForm.valid }}
+		</form>
+	</div>
+</div>

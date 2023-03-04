@@ -8,8 +8,11 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class RegComponent {
   profileForm = new FormGroup({
-    firstName: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(25)]),
-    lastName: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(25)]),
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
+    email: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(25)]),
+    password: new FormControl('', [Validators.required, Validators.minLength(8), Validators.maxLength(25)]),
+    confirm_password: new FormControl('', [Validators.required, Validators.minLength(8), Validators.maxLength(25)]), 
   });
   onSubmit() {
     // TODO: Use EventEmitter with form value
